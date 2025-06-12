@@ -1199,7 +1199,7 @@
 			</Point>
 		</Placemark>
 		<Placemark>
-			<name>400ft AGL</name>
+			<name>400ft AGL a</name>
 			<LookAt>
 				<longitude>149.0270383473772</longitude>
 				<latitude>-35.29143493920748</latitude>
@@ -1233,7 +1233,7 @@
 			</Point>
 		</Placemark>
 		<Placemark>
-			<name>400ft AGL</name>
+			<name>400ft AGL b</name>
 			<LookAt>
 				<longitude>149.0297813067138</longitude>
 				<latitude>-35.2869360503914</latitude>

@@ -6,16 +6,11 @@ script test/obstacles.scr
 
 module load kmlread
 
-kml load "APPROVED v3 RPAS2023-11232 - Aerial Robotics Australia Pty Ltd - ARN 1163975 - BVLOS Operating Area v1 15_05_2025.kml"
-#kml toggle "3500ft LL C-Class Canberra-7"
-#kml toggle "5500ft LL C-Class Canberra-8"
-#kml toggle "6500ft LL C-Class Canberra-9"
-#kml toggle "8500ft LL C-Class Canberra-10"
-#kml toggle "Untitled Path-12"
-#kml toggle "Altitude Limit - 4900 ft AMSL-4"
-#kml toggle "Altitude Limit - 5900 ft AMSL-5"
-#kml toggle "N2-11"
-
+kml load "APPROVED v3 mod simplified.kml"
+kml set icon flag.png
+kml load "orroral_survey.kml"
+#kml load "Mt Tennent view shed.kmz"
+#kml load "OTH view shed.kmz"
 
 terrain set source SRTM1
 
