@@ -1,0 +1,61 @@
+Notes:
+General: Trying to stay 20m below max alt
+
+WP 11 and 12 are in 	Yellow zone - max 670m AMSL
+Wp 18 is last in 	Pink zone - 120m AGL
+WP 19 is first in 	Cyan zone - max 1188m AMSL
+WP 20 is last in	"
+WP 22 is last in 	Blue zone - max 1493m AMSL
+Rest is in Purple zone - max 1798m AMSL
+
+
+QNH is ~60m higher than GPS
+
+
+Climbing at 1.5 m/s, terrain height is >500m
+
+
+Min AGL was just over 200 m (non QNH), so about 140m if we're following QNH
+
+Zone	Alt lim		Max ground (100m height)
+Yellow	670		570
+Cyan	1188	 	1088
+Blue	1493		1393
+Purple	1798		1698
+
+
+Frame: Abs(AMSL) = 0, Rel(Home) = 3, AGL = 10
+
+
+
+
+even with the ottano's max roll, it's like the thing turns on a dime
+
+climb rates are slow, though.
+
+
+did it make the 1493 border? (wp 43)
+and the 1188 border (wp 47)
+
+
+did it go back up before going down for agl?
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

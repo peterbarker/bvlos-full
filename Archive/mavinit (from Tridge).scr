@@ -1,0 +1,20 @@
+script GriffinPro/common.scr
+
+signing key goaNg4kie2
+
+set numcells 6
+module load speech
+
+warning set esc_group1 1280
+warning set esc_group2 2560
+
+console add RSRP "RSRP: %.0f" NAMED_VALUE_FLOAT["RSRP"].value/10 6
+console add RSRQ "RSRQ: %.0f" NAMED_VALUE_FLOAT["RSRQ"].value/10 6
+console add RSSN "RSSN: %.0f" NAMED_VALUE_FLOAT["RSSN"].value/10 6
+console add RSSI "RSSI: %.0f" NAMED_VALUE_FLOAT["RSSI"].value/10 6
+console add BAND "Band: %.0f" NAMED_VALUE_FLOAT["band"].value 6
+console add TOWER "Tower: %.0f" NAMED_VALUE_FLOAT["tower_id"].value 6
+
+console add vrpm "VRPM: %.0f %.0f %.0f %.0f" ESC_TELEMETRY_9_TO_12.rpm[0],ESC_TELEMETRY_9_TO_12.rpm[1],ESC_TELEMETRY_9_TO_12.rpm[2],ESC_TELEMETRY_9_TO_12.rpm[3] 7
+
+

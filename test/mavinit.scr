@@ -1,0 +1,46 @@
+map set circle_linewidth 3
+map set showalt True
+map set mission_color orange
+
+script test/obstacles.scr
+
+module load kmlread
+
+kml load "APPROVED v3 RPAS2023-11232 - Aerial Robotics Australia Pty Ltd - ARN 1163975 - BVLOS Operating Area v1 15_05_2025.kml"
+#kml toggle "3500ft LL C-Class Canberra-7"
+#kml toggle "5500ft LL C-Class Canberra-8"
+#kml toggle "6500ft LL C-Class Canberra-9"
+#kml toggle "8500ft LL C-Class Canberra-10"
+#kml toggle "Untitled Path-12"
+#kml toggle "Altitude Limit - 4900 ft AMSL-4"
+#kml toggle "Altitude Limit - 5900 ft AMSL-5"
+#kml toggle "N2-11"
+
+
+terrain set source SRTM1
+
+wp list
+fence list
+
+#from common.scr
+console menu add Graphs:THeight graph TERRAIN_REPORT.current_height
+console menu add Graphs:AMSL_m graph VFR_HUD.alt
+console menu add Graphs:AMSL_ft graph feet(VFR_HUD.alt)
+console menu add Graphs:ASpeed2 gspeed2
+console menu add Graphs:RSRP graph NAMED_VALUE_FLOAT['RSRP'].value*0.1
+console menu add Graphs:QNH_ft graph NAMED_VALUE_FLOAT['QNH_ALT_FT'].value
+console menu add Graphs:QNH_m graph (NAMED_VALUE_FLOAT['QNH_ALT_FT'].value)/3.28
+
+console add Alt-AGL "Alt-AGLft %.0fft" feet(TERRAIN_REPORT.current_height)
+console add Alt-AGL "Alt-AGLm %.0fm" TERRAIN_REPORT.current_height
+console add Alt-AMSLft "Alt-AMSL %.0fft" feet(VFR_HUD.alt)
+console add Alt-AMSLm "Alt-AMSL %.0fm" VFR_HUD.alt
+console add Alt-QNHft "Alt-QNH %.0fft" NAMED_VALUE_FLOAT['QNH_ALT_FT'].value
+console add Alt-QNHm "Alt-QNH %.0fm" (NAMED_VALUE_FLOAT['QNH_ALT_FT'].value)/3.28
+#console add DistCBR "DistCBR %s" dist_mag_from(GLOBAL_POSITION_INT,-35.30704806,149.19437088)
+#console add DistSTR "DistSTR %s" dist_mag_from(GLOBAL_POSITION_INT,-35.32743917,149.00021706)
+
+graph TERRAIN_REPORT.current_height
+graph VFR_HUD.alt
+
+
