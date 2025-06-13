@@ -1,6 +1,14 @@
 map set circle_linewidth 3
 map set showalt True
 map set mission_color orange
+map follow 0
+set streamrate 1
+
+#takeoff point
+#map center -35.28218274 149.00430510 
+#start of high area
+map zoom 15000
+map center -35.50371597 148.86401707
 
 script test/obstacles.scr
 
@@ -37,5 +45,9 @@ console add Alt-QNHm "Alt-QNH %.0fm" (NAMED_VALUE_FLOAT['QNH_ALT_FT'].value)/3.2
 
 graph TERRAIN_REPORT.current_height
 graph VFR_HUD.alt
+graph setmin 0 50
 
-
+#Mt. Tennent
+map circle -35.54945682 149.04453960 100 green
+#Honeysuckle Creek Tracking Station
+map circle -35.58315952 148.97785696 100 green
