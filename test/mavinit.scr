@@ -16,6 +16,7 @@ module load kmlread
 
 kml load "APPROVED v3 mod simplified.kml"
 kml set icon flag.png
+kml set label False
 kml load "orroral_survey.kml"
 #kml load "Mt Tennent view shed.kmz"
 #kml load "OTH view shed.kmz"
