@@ -50,5 +50,6 @@ graph setmin 0 50
 
 #Mt. Tennent
 map circle -35.54945682 149.04453960 100 green
+map circle -35.54958599 149.04448399 1500 blue
 #Honeysuckle Creek Tracking Station
 map circle -35.58315952 148.97785696 100 green
