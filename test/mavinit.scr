@@ -15,9 +15,22 @@ script test/obstacles.scr
 module load kmlread
 
 kml load "APPROVED v3 mod simplified.kml"
+#kml load fence.kml
+#kml load fence_NFZ.kml
+kml colour "Flight Geography-0" 0x009000
+kml colour "Contingency Volume-1" 0xFFFF00
+kml colour "Ground Risk Buffer-2" 0xFF0000
+kml colour "400ft AGL Altitude Limited Area-3" 0xFF00FF
+kml colour "Altitude Limit - 3900 ft AMSL-4" 0x00FFFF
+kml colour "Altitude Limit - 4900 ft AMSL-5" 0x0000FF
+kml colour "Altitude Limit - 5900 ft AMSL-6" 0xCC00CC
+kml colour "River crossing area - 2200 ft AMSL-7" 0xFFD600
+
 kml set icon flag.png
-kml set label False
+map set wpspacing "    "
 kml load "orroral_survey.kml"
+kml colouralltext 0xF000FF
+
 #kml load "Mt Tennent view shed.kmz"
 #kml load "OTH view shed.kmz"
 
@@ -26,8 +39,8 @@ terrain set source SRTM1
 wp list
 fence list
 
-#from common.scr
-console menu add Graphs:THeight graph TERRAIN_REPORT.current_height
+#from common.scr (modified)
+console menu add Graphs:AGL_m graph TERRAIN_REPORT.current_height
 console menu add Graphs:AMSL_m graph VFR_HUD.alt
 console menu add Graphs:AMSL_ft graph feet(VFR_HUD.alt)
 console menu add Graphs:ASpeed2 gspeed2
@@ -35,8 +48,8 @@ console menu add Graphs:RSRP graph NAMED_VALUE_FLOAT['RSRP'].value*0.1
 console menu add Graphs:QNH_ft graph NAMED_VALUE_FLOAT['QNH_ALT_FT'].value
 console menu add Graphs:QNH_m graph (NAMED_VALUE_FLOAT['QNH_ALT_FT'].value)/3.28
 
-console add Alt-AGL "Alt-AGLft %.0fft" feet(TERRAIN_REPORT.current_height)
-console add Alt-AGL "Alt-AGLm %.0fm" TERRAIN_REPORT.current_height
+console add Alt-AGLft "Alt-AGLft %.0fft" feet(TERRAIN_REPORT.current_height)
+console add Alt-AGLm "Alt-AGLm %.0fm" TERRAIN_REPORT.current_height
 console add Alt-AMSLft "Alt-AMSL %.0fft" feet(VFR_HUD.alt)
 console add Alt-AMSLm "Alt-AMSL %.0fm" VFR_HUD.alt
 console add Alt-QNHft "Alt-QNH %.0fft" NAMED_VALUE_FLOAT['QNH_ALT_FT'].value
@@ -53,3 +66,4 @@ map circle -35.54945682 149.04453960 100 green
 map circle -35.54958599 149.04448399 1500 blue
 #Honeysuckle Creek Tracking Station
 map circle -35.58315952 148.97785696 100 green
+
