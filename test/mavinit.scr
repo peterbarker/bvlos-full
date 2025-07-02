@@ -30,6 +30,16 @@ kml set icon flag.png
 map set wpspacing "    "
 kml load "orroral_survey.kml"
 kml colouralltext 0xF000FF
+kml togglepattern *_grb_*,*_dv_*
+kml togglepattern *NFZ_0*
+kml toggle NFZ_0_0-8
+kml togglepattern *NFZ-*
+kml toggle "Bendora Dam NFZ 2_0-47"
+
+#This is the polygon ones
+#kml togglepattern NFZ_*
+#This is the smallest circle right around the polygon
+#kml togglepattern *_nfz_*
 
 #kml load "Mt Tennent view shed.kmz"
 #kml load "OTH view shed.kmz"
