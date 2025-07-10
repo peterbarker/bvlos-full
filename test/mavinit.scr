@@ -27,7 +27,7 @@ kml colour "Altitude Limit - 5900 ft AMSL-6" 0xCC00CC
 kml colour "River crossing area - 2200 ft AMSL-7" 0xFFD600
 
 kml set icon flag.png
-map set wpspacing "    "
+# map set wpspacing "    "
 kml load "orroral_survey.kml"
 kml colouralltext 0xF000FF
 kml togglepattern *_grb_*,*_dv_*
