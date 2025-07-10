@@ -1,3 +1,4 @@
+#!/bin/bash
 
 if [ -z "$1" ]; then
     LOC="SpringValley2"
@@ -12,6 +13,6 @@ nice python3 ../../Tools/autotest/sim_vehicle.py -D -G --aircraft test --vehicle
 #for griffin pro use SpringValley2
 #Custom (put in ~/.config/ardupilot/locations.txt): 
 #MtTennent=-35.54994219,149.04469406,1369,0
-#Shortcut=-35.30414085,148.89860101,649,180
+#Shortcut=-35.30414085,148.89860101,649,0
 
 #add --no-configure -N for no build or configure

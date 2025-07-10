@@ -58,12 +58,12 @@ console menu add Graphs:RSRP graph NAMED_VALUE_FLOAT['RSRP'].value*0.1
 console menu add Graphs:QNH_ft graph NAMED_VALUE_FLOAT['QNH_ALT_FT'].value
 console menu add Graphs:QNH_m graph (NAMED_VALUE_FLOAT['QNH_ALT_FT'].value)/3.28
 
-console add Alt-AGLft "Alt-AGLft %.0fft" feet(TERRAIN_REPORT.current_height)
-console add Alt-AGLm "Alt-AGLm %.0fm" TERRAIN_REPORT.current_height
-console add Alt-AMSLft "Alt-AMSL %.0fft" feet(VFR_HUD.alt)
+console add Alt-AGLm "Alt-AGL %.0fm" TERRAIN_REPORT.current_height
 console add Alt-AMSLm "Alt-AMSL %.0fm" VFR_HUD.alt
-console add Alt-QNHft "Alt-QNH %.0fft" NAMED_VALUE_FLOAT['QNH_ALT_FT'].value
 console add Alt-QNHm "Alt-QNH %.0fm" (NAMED_VALUE_FLOAT['QNH_ALT_FT'].value)/3.28
+# console add Alt-AGLft "Alt-AGL %.0fft" feet(TERRAIN_REPORT.current_height)
+# console add Alt-AMSLft "Alt-AMSL %.0fft" feet(VFR_HUD.alt)
+# console add Alt-QNHft "Alt-QNH %.0fft" NAMED_VALUE_FLOAT['QNH_ALT_FT'].value
 #console add DistCBR "DistCBR %s" dist_mag_from(GLOBAL_POSITION_INT,-35.30704806,149.19437088)
 #console add DistSTR "DistSTR %s" dist_mag_from(GLOBAL_POSITION_INT,-35.32743917,149.00021706)
 
