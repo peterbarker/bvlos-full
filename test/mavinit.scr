@@ -8,7 +8,10 @@ set streamrate 1
 #map center -35.28218274 149.00430510 
 #start of high area
 map zoom 15000
-map center -35.50371597 148.86401707
+#for survey mission planning
+# map center -35.50371597 148.86401707 
+#for general mission planning
+map center -35.32893908 148.88497341
 
 script test/obstacles.scr
 
@@ -67,9 +70,12 @@ console add Alt-QNHm "Alt-QNH %.0fm" (NAMED_VALUE_FLOAT['QNH_ALT_FT'].value)/3.2
 #console add DistCBR "DistCBR %s" dist_mag_from(GLOBAL_POSITION_INT,-35.30704806,149.19437088)
 #console add DistSTR "DistSTR %s" dist_mag_from(GLOBAL_POSITION_INT,-35.32743917,149.00021706)
 
-graph TERRAIN_REPORT.current_height
 graph VFR_HUD.alt
-graph setmin 0 50
+graph setmin 0 550
+graph setmax 0 1500
+graph TERRAIN_REPORT.current_height
+graph setmin 1 0
+#graph setmin 1 None to disable.
 
 #Mt. Tennent
 map circle -35.54945682 149.04453960 100 green

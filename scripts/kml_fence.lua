@@ -193,7 +193,7 @@ local function run_checks()
     local alt_amsl = loc:alt() * 0.01
     local alt_amsl_ft = feet(alt_amsl)
     local alt_agl_ft = nil
-    local terrain_alt = terrain:height_amsl(loc, true)
+    local terrain_alt = terrain:height_amsl(loc, false)
     if terrain_alt then
         alt_agl_ft = feet(alt_amsl - terrain_alt)
     end
