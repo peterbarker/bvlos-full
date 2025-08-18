@@ -56,7 +56,8 @@ local FEN_KML_MA_W_INT = bind_add_param('MA_W_INT', 3, 5)
 
 triggered = false
 min_alt_triggered = 0.0
-min_alt_disabled = true
+min_alt_disabled = nil
+min_alt_disabled_prev = nil
 
 local polygons = require("fence")
 
@@ -249,13 +250,18 @@ local function run_checks()
         local alt_agl_dir_m = terrain:height_above_terrain(true)
         gcs:send_named_float("KML_AGL_D", alt_agl_dir_m)
     end
+    min_alt_disabled = vehicle:is_landing() or vehicle:is_taking_off()
+    if min_alt_disabled ~= min_alt_disabled_prev then
+        min_alt_disabled_prev = min_alt_disabled
+        if min_alt_disabled then
+            gcs:send_text(MAV_SEVERITY.INFO, "KML: Min alt fence disabled.")
+        else
+            gcs:send_text(MAV_SEVERITY.INFO, "KML: Min alt fence enabled.")
+        end
+    end
     if margin and margin < 0 and now_s-min_alt_triggered > FEN_KML_MA_W_INT:get() and not min_alt_disabled then
         gcs:send_text(MAV_SEVERITY.ALERT, string.format("@Breached min alt fence %.0f m", margin))
         min_alt_triggered = now_s
-    elseif min_alt_disabled and margin and margin > 10 then
-        -- vehicle has reached min alt fence plus 10 m
-        gcs:send_text(MAV_SEVERITY.INFO, string.format("KML: Min alt fence enabled."))
-        min_alt_disabled = false
     end
 
     if breach_index and boundary_ok == false then
