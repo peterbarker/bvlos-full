@@ -73,7 +73,7 @@ console add Alt-QNHm "Alt-QNH %.0fm" (NAMED_VALUE_FLOAT['QNH_ALT_FT'].value)/3.2
 
 graph VFR_HUD.alt
 graph setmin 0 550
-graph setmax 0 1500
+# graph setmax 0 1500
 graph TERRAIN_REPORT.current_height
 graph setmin 1 0
 #graph setmin 1 None to disable.
